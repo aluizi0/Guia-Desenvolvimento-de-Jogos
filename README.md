@@ -2,11 +2,11 @@
 
 ## Sobre o Projeto
 
-Este repositório contém o código-fonte de um site interativo criado como parte da disciplina de **Informática e Sociedade** da **Universidade de Brasília (UnB)**. O site é uma adaptação do "Guia Desenvolvimento Ético de Software com Foco em Jogos", um documento que explora os desafios éticos e legais no desenvolvimento de jogos.
+Este repositório contém o código-fonte de um site interativo criado como parte de um projeto em grupo dado pela disciplina de **Informática e Sociedade** da **Universidade de Brasília (UnB)**. O site é uma adaptação do "Guia Desenvolvimento Ético de Software com Foco em Jogos", um documento que explora os desafios éticos e legais no desenvolvimento de jogos.
 
 > [cite_start]O objetivo é transformar a ética de um obstáculo em uma ferramenta poderosa para criar jogos melhores, mais justos e com maior chance de sucesso[cite: 16].
 
-[cite_start]O guia foi estruturado para apresentar dilemas comuns da indústria, como plágio, monetização responsável e gestão de comunidades online[cite: 11]. Para cada dilema, a abordagem segue uma estrutura focada na ação:
+[cite_start]O guia foi estruturado para apresentar dilemas comuns da indústria, como plágio, tratamento de dados e gestão de comunidades online[cite: 11]. Para cada dilema, a abordagem segue uma estrutura focada na ação:
 * [cite_start]**A Armadilha:** Apresenta o problema e o pensamento comum que leva ao erro[cite: 13].
 * [cite_start]**O Mundo Real:** Mostra exemplos concretos e suas consequências[cite: 14].
 * [cite_start]**A Melhor Prática:** Oferece a solução direta e embasada para não cair na armadilha[cite: 15].
