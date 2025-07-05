@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Desenvolvimento Ético de Jogos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Guia de Desenvolvimento Ético de Jogos</h1>
+        <p>Um guia interativo sobre as melhores práticas para criar jogos justos e de sucesso.</p>
+    </header>
+
+    <main>
+        <section id="parte1">
+            <h2>Parte 1: A Arquitetura da Originalidade</h2>
+            <p>Nesta primeira parte, o foco é na fundação do seu jogo: como construir uma obra original, respeitando o trabalho de outros e protegendo o seu.</p>
+            
+            <h3>1. O Dilema da Inspiração vs. Plágio</h3>
+            <p><strong>A Armadilha:</strong> "Não estou copiando, estou apenas me inspirando fortemente. A mecânica do jogo nem pode ser protegida por lei."</p>
+            <p><strong>O Mundo Real:</strong> Mesmo que a mecânica não seja protegida por copyright, a expressão visual ("look and feel") pode ser. A comunidade de jogadores é rápida em identificar e criticar cópias. [cite_start]Palworld, por exemplo, sofreu acusações por suas semelhanças com Pokémon. [cite: 25] [cite_start]Em contraste, Stardew Valley, inspirado em Harvest Moon, foi elogiado por construir sua própria identidade. [cite: 26]</p>
+            <p><strong>A Melhor Prática:</strong> Separe o "o quê" do "como". Inspire-se na mecânica, mas crie sua própria expressão visual e artística. [cite_start]A Lei de Direitos Autorais (Lei nº 9.610/98) protege a "expressão" (arte, código), não a "ideia". [cite: 29] Se um jogador olhar seu jogo e pensar imediatamente em outro, reavalie.</p>
+
+            <h3>2. O Uso de Código e Assets de Terceiros</h3>
+            [cite_start]<p><strong>A Armadilha:</strong> "Se está disponível publicamente no GitHub ou numa loja, posso usar no meu projeto comercial." [cite: 36]</p>
+            [cite_start]<p><strong>O Mundo Real:</strong> Um único arquivo com a licença errada pode comprometer todo o projeto. [cite: 38] [cite_start]Bibliotecas com licenças "virais" (como a GPL) podem forçar a abertura do seu código-fonte proprietário. [cite: 40]</p>
+            <p><strong>A Melhor Prática:</strong> Disciplina e documentação. SEMPRE leia a licença. [cite_start]Entenda a diferença entre licenças permissivas (MIT, Apache), seguras para uso comercial, e licenças "copyleft" (GPL). [cite: 45] [cite_start]Mantenha uma planilha registrando todos os assets de terceiros, suas fontes e licenças. [cite: 46]</p>
+
+            <button id="btn-parte1">Concluir Etapa 1</button>
+        </section>
+
+        <section id="parte2" class="bloqueado">
+            <h2>Parte 2: A Engenharia da Responsabilidade</h2>
+            [cite_start]<p>O foco muda da criação para o impacto: a responsabilidade da empresa com o jogador, seus dados e a forma como o jogo gera receita. [cite: 50]</p>
+
+            <h3>1. Proteção e Ética no Uso de Dados dos Jogadores</h3>
+            [cite_start]<p><strong>A Armadilha:</strong> "Vamos coletar o máximo de dados possível, afinal, o usuário aceitou os termos de uso." [cite: 53]</p>
+            [cite_start]<p><strong>O Mundo Real:</strong> A mentalidade de "coletar tudo" é um risco legal imenso na era da LGPD. [cite: 54] [cite_start]Vazamentos em grandes empresas como Sony e Nintendo mostram que cada dado coletado é uma responsabilidade. [cite: 57]</p>
+            <p><strong>A Melhor Prática:</strong> Adote "Privacidade por Design". [cite_start]A LGPD (Lei nº 13.709/2018) exige finalidade e necessidade. [cite: 62, 63] [cite_start]Pratique a coleta mínima: pergunte se o dado é essencial para o jogo. [cite: 65] [cite_start]Seja transparente, obtenha consentimento válido (caixas pré-marcadas não valem) e invista em segurança. [cite: 67, 69, 71]</p>
+
+            <h3>2. Ética na Monetização e a Proteção de Crianças</h3>
+            [cite_start]<p><strong>A Armadilha:</strong> "Se uma criança usa o cartão dos pais sem permissão, o problema é da família." [cite: 74]</p>
+            <p><strong>O Mundo Real:</strong> Essa abordagem é legalmente perigosa. [cite_start]A controvérsia das loot boxes de Star Wars Battlefront II impulsionou governos a investigar e até banir esses mecanismos. [cite: 77, 78] [cite_start]Casos de gastos excessivos por crianças geram processos e imagem negativa. [cite: 79, 80]</p>
+            <p><strong>A Melhor Prática:</strong> Crie um sistema justo. [cite_start]O Marco Legal dos Games (Lei nº 14.852/2024) e o ECA priorizam a proteção infantil. [cite: 82] [cite_start]Implemente barreiras de compra (senhas, 2FA), evite "dark patterns" (padrões de design manipuladores) e ofereça controles parentais robustos e acessíveis. [cite: 84, 86, 88]</p>
+
+            <button id="btn-parte2" disabled>Concluir Etapa 2</button>
+        </section>
+
+        <section id="parte3" class="bloqueado">
+            <h2>Parte 3: A Arena Digital: Ética e Gestão de Comunidades</h2>
+            [cite_start]<p>A responsabilidade se estende para além do código: a gestão da comunidade que se forma em torno do seu jogo. [cite: 91]</p>
+            
+            <h3>1. A Luta Contra a Toxicidade Online</h3>
+            [cite_start]<p><strong>A Armadilha:</strong> "Toxicidade é problema dos jogadores, eles que se resolvam. Não somos babás." [cite: 95]</p>
+            [cite_start]<p><strong>O Mundo Real:</strong> Ignorar a comunidade afeta o sucesso do jogo, espantando novos jogadores. [cite: 96, 97] [cite_start]Jogos como League of Legends investem milhões para combater a toxicidade, que ainda é um obstáculo. [cite: 100, 101] [cite_start]Com o Marco Legal dos Games, a omissão deixou de ser uma opção no Brasil, exigindo que empresas protejam os usuários. [cite: 102, 103]</p>
+            <p><strong>A Melhor Prática:</strong> Assuma a responsabilidade. [cite_start]Crie um Código de Conduta claro e visível. [cite: 110] [cite_start]Implemente ferramentas de moderação eficazes, com sistemas de denúncia que forneçam feedback. [cite: 112, 113] [cite_start]Por fim, desenhe sistemas que recompensem o bom comportamento, como sistemas de "honra" ou elogios, fomentando uma cultura positiva. [cite: 115, 116]</p>
+
+            <button id="btn-parte3" disabled>Finalizar Guia</button>
+        </section>
+        
+        <section id="final" style="display: none;">
+            <h2>🏆 Parabéns! 🏆</h2>
+            <p>Você concluiu o Guia de Desenvolvimento Ético de Jogos. Agora você tem as ferramentas e o conhecimento para construir jogos não apenas divertidos, mas também justos, seguros e responsáveis.</p>
+            <p>Lembre-se: a ética não é um obstáculo, mas uma vantagem competitiva que constrói a confiança da sua comunidade e garante a longevidade do seu projeto.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

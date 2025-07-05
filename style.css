@@ -1,0 +1,147 @@
+/* Adicionamos a regra para o scroll suave no elemento raiz */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos gerais do corpo da página */
+body {
+    /* Usamos uma fonte padrão para os parágrafos, para melhor leitura */
+    font-family: sans-serif; 
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a2e; /* Um fundo escuro para o tema tech */
+    color: #e0e0e0; /* Cor de texto mais clara */
+}
+
+/* Container principal */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #162447;
+    color: #1f4068;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #1f4068;
+}
+
+/* Aplicando a fonte Orbitron aos títulos e botões */
+header h1, section h2, section h3, button {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff; /* Cor de destaque para os títulos */
+}
+
+header h1 {
+    font-size: 2.5em;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.767); /* Efeito de brilho */
+}
+
+header p {
+    color: #b8c1ec;
+}
+
+/* Estilo de cada seção do guia */
+section {
+    background-color: #162447;
+    margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #1f4068;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+}
+
+section h2 {
+    border-bottom: 2px solid #1f4068;
+    padding-bottom: 10px;
+}
+
+/* Estilo dos botões */
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #1c61e2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0b1166;
+    transform: translateY(-2px); /* Efeito de levantar ao passar o mouse */
+}
+
+/* Estilo para botões desativados */
+button:disabled {
+    background-color: #5f677a;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* A classe para seções bloqueadas */
+.bloqueado {
+    opacity: 0.5;
+    pointer-events: none;
+    transform: scale(0.98);
+}
+
+/* Estilo da seção final */
+#final {
+    text-align: center;
+    background-color: #1b263b;
+    border: 2px solid #e43f5a;
+}
+
+
+/* =================================== */
+/* REGRAS DE RESPONSIVIDADE      */
+/* =================================== */
+
+/* Estilos que serão aplicados em telas com largura máxima de 768px (tablets e celulares) */
+@media (max-width: 768px) {
+
+    /* Diminui o tamanho do título principal para não quebrar em telas pequenas */
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    /* Reduz as margens e o padding do container principal para aproveitar melhor o espaço */
+    main {
+        margin: 10px auto;
+        padding: 0 10px;
+    }
+
+    /* Reduz o espaçamento interno das seções */
+    section {
+        padding: 15px;
+    }
+
+    /* Ajusta os tamanhos dos subtítulos dentro das seções */
+    section h2 {
+        font-size: 1.4em;
+    }
+
+    section h3 {
+        font-size: 1.1em;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
