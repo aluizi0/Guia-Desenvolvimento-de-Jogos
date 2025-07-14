@@ -113,6 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const topicoAtual = this.closest('.topico-item');
             
             if (this.checked) {
+                // IMPORTANTE: Torna o checkbox readonly após ser marcado (clique único)
+                this.disabled = true;
+                this.style.pointerEvents = 'none';
+                
                 // Marca o tópico como concluído
                 topicoAtual.classList.add('concluido');
                 
@@ -142,12 +146,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Verifica se todos os tópicos da tela foram concluídos
                 verificarConclusaoEtapa(topicoAtual);
-            } else {
-                // Se desmarcou o checkbox, remove a classe concluído
-                topicoAtual.classList.remove('concluido');
                 
-                // Verifica novamente se pode manter o botão habilitado
-                verificarConclusaoEtapa(topicoAtual);
+                console.log('Tópico marcado como concluído e checkbox desabilitado:', topicoAtual);
             }
         });
     });
@@ -194,10 +194,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function resetarTodoOGuia() {
         console.log('Resetando todo o guia...');
         
-        // 1. Desmarca todos os checkboxes
+        // 1. Desmarca e reabilita todos os checkboxes
         const todosOsCheckboxes = document.querySelectorAll('.topico-checkbox');
         todosOsCheckboxes.forEach(checkbox => {
             checkbox.checked = false;
+            checkbox.disabled = false;
+            checkbox.style.pointerEvents = 'auto';
         });
         
         // 2. Remove classe 'concluido' de todos os tópicos
