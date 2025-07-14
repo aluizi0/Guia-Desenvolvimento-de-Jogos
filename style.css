@@ -1,147 +1,219 @@
-/* Adicionamos a regra para o scroll suave no elemento raiz */
+/* ... (código CSS anterior - body, tela, escondido, etc. permanece o mesmo) ... */
 html {
     scroll-behavior: smooth;
 }
-
-/* Estilos gerais do corpo da página */
 body {
-    /* Usamos uma fonte padrão para os parágrafos, para melhor leitura */
-    font-family: sans-serif; 
+    font-family: sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #1a1a2e; /* Um fundo escuro para o tema tech */
-    color: #e0e0e0; /* Cor de texto mais clara */
-}
-
-/* Container principal */
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
-/* Estilo do cabeçalho */
-header {
-    background-color: #162447;
-    color: #1f4068;
-    padding: 20px;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
     text-align: center;
-    border-bottom: 3px solid #1f4068;
 }
-
-/* Aplicando a fonte Orbitron aos títulos e botões */
-header h1, section h2, section h3, button {
-    font-family: 'Orbitron', sans-serif;
-    color: #ffffff; /* Cor de destaque para os títulos */
+.escondido {
+    display: none;
 }
-
-header h1 {
-    font-size: 2.5em;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.767); /* Efeito de brilho */
-}
-
-header p {
-    color: #b8c1ec;
-}
-
-/* Estilo de cada seção do guia */
-section {
-    background-color: #162447;
-    margin-bottom: 20px;
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid #1f4068;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: opacity 0.5s ease-in-out, transform 0.3s ease;
-}
-
-section h2 {
-    border-bottom: 2px solid #1f4068;
-    padding-bottom: 10px;
-}
-
-/* Estilo dos botões */
-button {
-    display: block;
+.tela {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
     width: 100%;
-    padding: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.tela.escondido {
+    display: none;
+}
+
+/* NOVOS ESTILOS */
+.dilema-container {
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+.dilema-container:last-of-type {
+    margin-bottom: 20px;
+}
+
+.topicos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre os tópicos */
+    margin-top: 20px;
+}
+
+.topico-item {
+    background-color: #162447;
+    border: 1px solid #1f4068;
+    border-radius: 8px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    text-align: left;
+}
+.topico-item.bloqueado {
+    background-color: #2a2a3e;
+    border-color: #444;
+    color: #888;
+    cursor: not-allowed;
+}
+.topico-item.concluido {
+    background-color: #1a3d2e;
+    border-color: #27ae60;
+}
+.topico-item h4 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.topico-item.bloqueado h4 {
+    color: #888;
+}
+.topico-item.concluido h4 {
+    color: #27ae60;
+}
+
+/* Ícone de Cadeado */
+.icone-cadeado {
+    display: inline-block;
+    width: 12px;
+    height: 10px;
+    background-color: #888;
+    border-radius: 2px;
+    position: relative;
+}
+.icone-cadeado::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 2px;
+    width: 8px;
+    height: 6px;
+    border: 2px solid #888;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+}
+.topico-item.bloqueado .icone-cadeado {
+    background-color: #555;
+}
+.topico-item.bloqueado .icone-cadeado::before {
+    border-color: #555;
+}
+.icone-cadeado.desbloqueado {
+    background-color: #27ae60;
+}
+.icone-cadeado.desbloqueado::before {
+    border-color: #27ae60;
+    top: -8px; /* Efeito de cadeado aberto */
+    left: 0px;
+    transform: rotate(-15deg);
+}
+
+.conteudo-topico {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #1f4068;
+    max-height: 0; /* Começa com altura 0 para animação */
+    overflow: hidden; /* Esconde o conteúdo que transborda */
+    transition: max-height 0.5s ease-out; /* Animação suave */
+}
+.conteudo-topico.visivel {
+    max-height: 500px; /* Altura máxima para o conteúdo aparecer */
+}
+
+/* Estilos de Títulos e Botões */
+h1, h2, h3, button {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff;
+    text-align: center;
+}
+h3 { font-size: 1.4em; }
+p { color: #b8c1ec; font-size: 1.1em; }
+
+button {
+    display: inline-block;
+    padding: 15px 30px;
     background-color: #1c61e2;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, opacity 0.3s;
 }
-
-button:hover:not(:disabled) {
-    background-color: #0b1166;
-    transform: translateY(-2px); /* Efeito de levantar ao passar o mouse */
-}
-
-/* Estilo para botões desativados */
 button:disabled {
     background-color: #5f677a;
     cursor: not-allowed;
-    opacity: 0.7;
-}
-
-/* A classe para seções bloqueadas */
-.bloqueado {
     opacity: 0.5;
-    pointer-events: none;
-    transform: scale(0.98);
 }
 
-/* Estilo da seção final */
-#final {
-    text-align: center;
-    background-color: #1b263b;
-    border: 2px solid #e43f5a;
+/* Estilos para Checkbox Customizado */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #b8c1ec;
+    user-select: none;
 }
 
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
 
-/* =================================== */
-/* REGRAS DE RESPONSIVIDADE      */
-/* =================================== */
+.checkmark {
+    height: 20px;
+    width: 20px;
+    background-color: #2a2a3e;
+    border: 2px solid #1f4068;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
 
-/* Estilos que serão aplicados em telas com largura máxima de 768px (tablets e celulares) */
-@media (max-width: 768px) {
+.checkbox-container:hover .checkmark {
+    border-color: #27ae60;
+}
 
-    /* Diminui o tamanho do título principal para não quebrar em telas pequenas */
-    header h1 {
-        font-size: 1.8em;
-    }
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #27ae60;
+    border-color: #27ae60;
+}
 
-    header p {
-        font-size: 0.9em;
-    }
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
 
-    /* Reduz as margens e o padding do container principal para aproveitar melhor o espaço */
-    main {
-        margin: 10px auto;
-        padding: 0 10px;
-    }
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
 
-    /* Reduz o espaçamento interno das seções */
-    section {
-        padding: 15px;
-    }
+.checkbox-container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
 
-    /* Ajusta os tamanhos dos subtítulos dentro das seções */
-    section h2 {
-        font-size: 1.4em;
-    }
-
-    section h3 {
-        font-size: 1.1em;
-    }
-
-    button {
-        padding: 12px;
-        font-size: 15px;
-    }
+.checkbox-container input:disabled ~ .checkmark {
+    background-color: #444;
+    border-color: #666;
+    opacity: 0.5;
 }

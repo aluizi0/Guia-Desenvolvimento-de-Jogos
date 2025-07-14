@@ -1,75 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia de Desenvolvimento Ético de Jogos</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+
+    <section id="tela-inicio" class="tela">
         <h1>Guia de Desenvolvimento Ético de Jogos</h1>
         <p>Um guia interativo sobre as melhores práticas para criar jogos justos e de sucesso.</p>
-    </header>
+        <button id="btn-iniciar">Vamos Começar</button>
+    </section>
 
-    <main>
-        <section id="parte1">
-            <h2>Parte 1: A Arquitetura da Originalidade</h2>
-            <p>Nesta primeira parte, o foco é na fundação do seu jogo: como construir uma obra original, respeitando o trabalho de outros e protegendo o seu.</p>
-            
+    <section id="parte1" class="tela escondido">
+        <h2>Parte 1: A Arquitetura da Originalidade</h2>
+        <div class="dilema-container">
             <h3>1. O Dilema da Inspiração vs. Plágio</h3>
-            <p><strong>A Armadilha:</strong> "Não estou copiando, estou apenas me inspirando fortemente. A mecânica do jogo nem pode ser protegida por lei."</p>
-            <p><strong>O Mundo Real:</strong> Mesmo que a mecânica não seja protegida por copyright, a expressão visual ("look and feel") pode ser. A comunidade de jogadores é rápida em identificar e criticar cópias. Palworld, por exemplo, sofreu acusações por suas semelhanças com Pokémon. Em contraste, Stardew Valley, inspirado em Harvest Moon, foi elogiado por construir sua própria identidade.</p>
-            <p><strong>A Melhor Prática:</strong> Separe o "o quê" do "como". Inspire-se na mecânica, mas crie sua própria expressão visual e artística. A Lei de Direitos Autorais (Lei nº 9.610/98) protege a "expressão" (arte, código), não a "ideia". Se um jogador olhar seu jogo e pensar imediatamente em outro, reavalie.</p>
-
+            <div class="topicos-container">
+                <div class="topico-item">
+                    <h4><span class="icone-cadeado desbloqueado"></span> A Armadilha</h4>
+                    <div class="conteudo-topico escondido">
+                        <p>"Não estou copiando, estou apenas me inspirando fortemente."</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="topico-checkbox">
+                            <span class="checkmark"></span>
+                            Li e compreendi este tópico
+                        </label>
+                    </div>
+                </div>
+                <div class="topico-item bloqueado">
+                    <h4><span class="icone-cadeado"></span> O Mundo Real</h4>
+                    <div class="conteudo-topico escondido">
+                        <p>O "look and feel" pode ser protegido. A comunidade critica cópias (ex: Palworld vs. Pokémon). Stardew Valley é um bom exemplo de inspiração bem-sucedida em Harvest Moon.</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="topico-checkbox">
+                            <span class="checkmark"></span>
+                            Li e compreendi este tópico
+                        </label>
+                    </div>
+                </div>
+                <div class="topico-item bloqueado">
+                    <h4><span class="icone-cadeado"></span> A Melhor Prática</h4>
+                    <div class="conteudo-topico escondido">
+                        <p>Inspire-se na mecânica, mas crie sua própria expressão visual e artística. Se um jogador olhar seu jogo e pensar em outro, reavalie.</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="topico-checkbox">
+                            <span class="checkmark"></span>
+                            Li e compreendi este tópico
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dilema-container">
             <h3>2. O Uso de Código e Assets de Terceiros</h3>
-            <p><strong>A Armadilha:</strong> "Se está disponível publicamente no GitHub ou numa loja, posso usar no meu projeto comercial."</p>
-            <p><strong>O Mundo Real:</strong> Um único arquivo com a licença errada pode comprometer todo o projeto. Bibliotecas com licenças "virais" (como a GPL) podem forçar a abertura do seu código-fonte proprietário.</p>
-            <p><strong>A Melhor Prática:</strong> Disciplina e documentação. SEMPRE leia a licença. Entenda a diferença entre licenças permissivas (MIT, Apache), seguras para uso comercial, e licenças "copyleft" (GPL). Mantenha uma planilha registrando todos os assets de terceiros, suas fontes e licenças.</p>
+            <div class="topicos-container">
+                <div class="topico-item bloqueado">
+                    <h4><span class="icone-cadeado"></span> A Armadilha</h4>
+                    <div class="conteudo-topico escondido">
+                        <p>"Se está disponível publicamente, posso usar no meu projeto comercial."</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="topico-checkbox">
+                            <span class="checkmark"></span>
+                            Li e compreendi este tópico
+                        </label>
+                    </div>
+                </div>
+                <div class="topico-item bloqueado">
+                    <h4><span class="icone-cadeado"></span> O Mundo Real</h4>
+                    <div class="conteudo-topico escondido">
+                        <p>Uma licença errada (como a "viral" GPL) pode forçar a abertura do seu código-fonte.</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="topico-checkbox">
+                            <span class="checkmark"></span>
+                            Li e compreendi este tópico
+                        </label>
+                    </div>
+                </div>
+                <div class="topico-item bloqueado">
+                    <h4><span class="icone-cadeado"></span> A Melhor Prática</h4>
+                    <div class="conteudo-topico escondido">
+                        <p>SEMPRE leia a licença. Entenda as permissivas (MIT) vs. "copyleft" (GPL). Mantenha um registro de todos os assets.</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="topico-checkbox">
+                            <span class="checkmark"></span>
+                            Li e compreendi este tópico
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="btn-parte1" disabled>Concluir Etapa 1</button>
+    </section>
 
-            <button id="btn-parte1">Concluir Etapa 1</button>
-        </section>
+    <section id="parte2" class="tela escondido">
+        <h2>Parte 2: A Engenharia da Responsabilidade</h2>
+        <div class="dilema-container">
+            <h3>1. Proteção e Ética no Uso de Dados</h3>
+            <div class="topicos-container">
+                <div class="topico-item bloqueado">
+                    <h4><span class="icone-cadeado"></span> A Armadilha</h4>
+                    <div class="conteudo-topico escondido">
+                        <p>"Vamos coletar o máximo de dados possível. Se o usuário aceitou os termos, está tudo certo."</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="topico-checkbox">
+                            <span class="checkmark"></span>
+                            Li e compreendi este tópico
+                        </label>
+                    </div>
+                </div>
+                <div class="topico-item bloqueado">
+                    <h4><span class="icone-cadeado"></span> O Mundo Real</h4>
+                    <div class="conteudo-topico escondido">
+                        <p>Na era da LGPD, "coletar tudo" é um risco legal imenso. Vazamentos em grandes empresas (Sony, Nintendo) quebram a confiança do usuário.</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="topico-checkbox">
+                            <span class="checkmark"></span>
+                            Li e compreendi este tópico
+                        </label>
+                    </div>
+                </div>
+                <div class="topico-item bloqueado">
+                    <h4><span class="icone-cadeado"></span> A Melhor Prática</h4>
+                    <div class="conteudo-topico escondido">
+                        <p>Adote "Privacidade por Design": colete apenas dados essenciais, com finalidade clara e consentimento válido.</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="topico-checkbox">
+                            <span class="checkmark"></span>
+                            Li e compreendi este tópico
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dilema-container">
+            <h3>2. Ética na Monetização e Proteção de Crianças</h3>
+            <div class="topicos-container">
+                <div class="topico-item bloqueado">
+                    <h4><span class="icone-cadeado"></span> A Armadilha</h4>
+                    <div class="conteudo-topico escondido">
+                        <p>"Se uma criança usa o cartão dos pais sem permissão, o problema é da família."</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="topico-checkbox">
+                            <span class="checkmark"></span>
+                            Li e compreendi este tópico
+                        </label>
+                    </div>
+                </div>
+                <div class="topico-item bloqueado">
+                    <h4><span class="icone-cadeado"></span> O Mundo Real</h4>
+                    <div class="conteudo-topico escondido">
+                        <p>A controvérsia das loot boxes (Star Wars Battlefront II) impulsionou governos a proibir mecanismos semelhantes a jogos de azar.</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="topico-checkbox">
+                            <span class="checkmark"></span>
+                            Li e compreendi este tópico
+                        </label>
+                    </div>
+                </div>
+                <div class="topico-item bloqueado">
+                    <h4><span class="icone-cadeado"></span> A Melhor Prática</h4>
+                    <div class="conteudo-topico escondido">
+                        <p>Implemente barreiras de compra claras (senhas, 2FA), evite "dark patterns" e ofereça controles parentais robustos e acessíveis.</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="topico-checkbox">
+                            <span class="checkmark"></span>
+                            Li e compreendi este tópico
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="btn-parte2" disabled>Concluir Etapa 2</button>
+    </section>
 
-        <section id="parte2" class="bloqueado">
-            <h2>Parte 2: A Engenharia da Responsabilidade</h2>
-            <p>O foco muda da criação para o impacto: a responsabilidade da empresa com o jogador, seus dados e a forma como o jogo gera receita.</p>
-
-            <h3>1. Proteção e Ética no Uso de Dados dos Jogadores</h3>
-            <p><strong>A Armadilha:</strong> "Vamos coletar o máximo de dados possível, afinal, o usuário aceitou os termos de uso."</p>
-            <p><strong>O Mundo Real:</strong> A mentalidade de "coletar tudo" é um risco legal imenso na era da LGPD. Vazamentos em grandes empresas como Sony e Nintendo mostram que cada dado coletado é uma responsabilidade.</p>
-            <p><strong>A Melhor Prática:</strong> Adote "Privacidade por Design". A LGPD (Lei nº 13.709/2018) exige finalidade e necessidade. Pratique a coleta mínima: pergunte se o dado é essencial para o jogo. Seja transparente, obtenha consentimento válido (caixas pré-marcadas não valem) e invista em segurança.</p>
-
-            <h3>2. Ética na Monetização e a Proteção de Crianças</h3>
-            <p><strong>A Armadilha:</strong> "Se uma criança usa o cartão dos pais sem permissão, o problema é da família."</p>
-            <p><strong>O Mundo Real:</strong> Essa abordagem é legalmente perigosa. A controvérsia das loot boxes de Star Wars Battlefront II impulsionou governos a investigar e até banir esses mecanismos. Casos de gastos excessivos por crianças geram processos e imagem negativa.</p>
-            <p><strong>A Melhor Prática:</strong> Crie um sistema justo. O Marco Legal dos Games (Lei nº 14.852/2024) e o ECA priorizam a proteção infantil. Implemente barreiras de compra (senhas, 2FA), evite "dark patterns" (padrões de design manipuladores) e ofereça controles parentais robustos e acessíveis.</p>
-
-            <button id="btn-parte2" disabled>Concluir Etapa 2</button>
-        </section>
-
-        <section id="parte3" class="bloqueado">
-            <h2>Parte 3: A Arena Digital: Ética e Gestão de Comunidades</h2>
-            <p>A responsabilidade se estende para além do código: a gestão da comunidade que se forma em torno do seu jogo.</p>
-            
+    <section id="parte3" class="tela escondido">
+        <h2>Parte 3: A Arena Digital</h2>
+        <div class="dilema-container">
             <h3>1. A Luta Contra a Toxicidade Online</h3>
-            <p><strong>A Armadilha:</strong> "Toxicidade é problema dos jogadores, eles que se resolvam. Não somos babás."</p>
-            <p><strong>O Mundo Real:</strong> Ignorar a comunidade afeta o sucesso do jogo, espantando novos jogadores. Jogos como League of Legends investem milhões para combater a toxicidade, que ainda é um obstáculo. Com o Marco Legal dos Games, a omissão deixou de ser uma opção no Brasil, exigindo que empresas protejam os usuários.</p>
-            <p><strong>A Melhor Prática:</strong> Assuma a responsabilidade. Crie um Código de Conduta claro e visível. Implemente ferramentas de moderação eficazes, com sistemas de denúncia que forneçam feedback. Por fim, desenhe sistemas que recompensem o bom comportamento, como sistemas de "honra" ou elogios, fomentando uma cultura positiva.</p>
+            <div class="topicos-container">
+                <div class="topico-item bloqueado">
+                    <h4><span class="icone-cadeado"></span> A Armadilha</h4>
+                    <div class="conteudo-topico escondido">
+                        <p>"Não somos babás. A toxicidade é problema dos próprios jogadores."</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="topico-checkbox">
+                            <span class="checkmark"></span>
+                            Li e compreendi este tópico
+                        </label>
+                    </div>
+                </div>
+                <div class="topico-item bloqueado">
+                    <h4><span class="icone-cadeado"></span> O Mundo Real</h4>
+                    <div class="conteudo-topico escondido">
+                        <p>Comunidades tóxicas espantam novos jogadores (ex: League of Legends). O Marco Legal dos Games no Brasil estabelece deveres claros para as empresas na proteção dos usuários.</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="topico-checkbox">
+                            <span class="checkmark"></span>
+                            Li e compreendi este tópico
+                        </label>
+                    </div>
+                </div>
+                <div class="topico-item bloqueado">
+                    <h4><span class="icone-cadeado"></span> A Melhor Prática</h4>
+                    <div class="conteudo-topico escondido">
+                        <p>Assuma a responsabilidade: crie um Código de Conduta claro, implemente ferramentas de moderação eficazes e desenhe sistemas que recompensem o bom comportamento.</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="topico-checkbox">
+                            <span class="checkmark"></span>
+                            Li e compreendi este tópico
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="btn-parte3" disabled>Finalizar Guia</button>
+    </section>
 
-            <button id="btn-parte3" disabled>Finalizar Guia</button>
-        </section>
-        
-        <section id="final" style="display: none;">
-            <h2>🏆 Parabéns! 🏆</h2>
-            <p>Você concluiu o Guia de Desenvolvimento Ético de Jogos. Agora você tem as ferramentas e o conhecimento para construir jogos não apenas divertidos, mas também justos, seguros e responsáveis.</p>
-            <p>Lembre-se: a ética não é um obstáculo, mas uma vantagem competitiva que constrói a confiança da sua comunidade e garante a longevidade do seu projeto.</p>
-        </section>
-    </main>
+    <section id="final" class="tela escondido">
+        <h2>🏆 Parabéns! 🏆</h2>
+        <p>Você concluiu o Guia de Desenvolvimento Ético de Jogos.</p>
+        <button id="btn-reiniciar">Voltar ao Início</button>
+    </section>
 
     <script src="script.js"></script>
 </body>
