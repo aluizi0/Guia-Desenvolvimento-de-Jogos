@@ -25,6 +25,7 @@ body {
     width: 100%;
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
+    padding-bottom: 2rem; /* Espaço extra no final */
 }
 
 .tela.escondido {
@@ -33,9 +34,9 @@ body {
 
 /* NOVOS ESTILOS */
 .dilema-container {
-    max-width: 800px;
+    max-width: 1000px; /* Reduzido de 1400px */
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 2rem;
 }
 .dilema-container:last-of-type {
     margin-bottom: 20px;
@@ -120,12 +121,17 @@ body {
     margin-top: 15px;
     padding-top: 15px;
     border-top: 1px solid #1f4068;
-    max-height: 0; /* Começa com altura 0 para animação */
-    overflow: hidden; /* Esconde o conteúdo que transborda */
     transition: max-height 0.5s ease-out; /* Animação suave */
 }
 .conteudo-topico.visivel {
-    max-height: 500px; /* Altura máxima para o conteúdo aparecer */
+    max-height: none; /* Remove limitação de altura */
+}
+
+/* Ajustes para containers específicos que podem ter muito conteúdo */
+.exemplo-real,
+.pratica-container,
+.template-box {
+    max-height: none; /* Remove limitação para elementos internos */
 }
 
 /* Estilos de Títulos e Botões */
@@ -137,20 +143,54 @@ h1, h2, h3, button {
 h3 { font-size: 1.4em; }
 p { color: #b8c1ec; font-size: 1.1em; }
 
+/* === BOTÕES MELHORADOS === */
 button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #1c61e2;
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 1.1em !important;
+    font-weight: 600;
+    padding: 15px 30px !important;
+    background: linear-gradient(135deg, #3498db, #2980b9) !important;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px !important;
     cursor: pointer;
-    margin-top: 30px;
-    transition: background-color 0.3s ease, opacity 0.3s;
+    margin-top: 1.5rem !important;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
+
+button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #2980b9, #1abc9c) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
 button:disabled {
-    background-color: #5f677a;
+    background: linear-gradient(135deg, #5f677a, #34495e) !important;
     cursor: not-allowed;
-    opacity: 0.5;
+    opacity: 0.6;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Botão de início especial */
+#btn-iniciar {
+    font-size: 1.2em !important;
+    padding: 18px 40px !important;
+    background: linear-gradient(135deg, #e74c3c, #c0392b) !important;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
+    }
+    50% {
+        box-shadow: 0 6px 30px rgba(231, 76, 60, 0.6);
+    }
+    100% {
+        box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
+    }
 }
 
 /* Estilos para Checkbox Customizado */
@@ -216,4 +256,408 @@ button:disabled {
     background-color: #444;
     border-color: #666;
     opacity: 0.5;
+}
+
+/* === ESTILOS PARA TELA INICIAL MELHORADA === */
+.intro-text {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+}
+
+.intro-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.highlight-icon {
+    font-size: 1.5em;
+}
+
+/* === ESTILOS PARA CONTEÚDO EXPANDIDO === */
+.warning-box {
+    background: rgba(231, 76, 60, 0.15);
+    border-left: 6px solid #e74c3c;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    font-size: 1.1em;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.1);
+}
+
+.exemplo-real {
+    background: rgba(52, 152, 219, 0.15);
+    border-left: 6px solid #3498db;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.1);
+}
+
+.exemplo-real h5 {
+    color: #3498db;
+    margin-bottom: 1rem;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.legal-info {
+    background: rgba(155, 89, 182, 0.15);
+    border-left: 6px solid #9b59b6;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(155, 89, 182, 0.1);
+}
+
+.best-practice-box {
+    background: rgba(46, 204, 113, 0.15);
+    border-left: 6px solid #2ecc71;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.1);
+}
+
+.pratica-container {
+    margin: 2rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.pratica-container h5 {
+    color: #f39c12;
+    margin-bottom: 1.2rem;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.template-box {
+    background: rgba(52, 73, 94, 0.8);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    border: 1px solid rgba(52, 152, 219, 0.2);
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.template-box ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.template-box p {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #f1c40f;
+}
+
+.link-materia {
+    display: inline-block;
+    color: #3498db;
+    text-decoration: none;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(52, 152, 219, 0.15);
+    border-radius: 8px;
+    border: 2px solid rgba(52, 152, 219, 0.3);
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 1.05em;
+}
+
+.link-materia:hover {
+    background: rgba(52, 152, 219, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.2);
+}
+
+/* === ESTILOS PARA TELA FINAL MELHORADA === */
+.conclusao-texto {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+}
+
+.conquistas-container {
+    margin: 2rem 0;
+}
+
+.conquista-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(46, 204, 113, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.conquista-icon {
+    font-size: 2em;
+    min-width: 60px;
+    text-align: center;
+}
+
+.conquista-item strong {
+    color: #2ecc71;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.proximos-passos {
+    margin: 2rem 0;
+}
+
+.proximos-passos ol {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-left: 2rem;
+}
+
+.proximos-passos li {
+    margin: 1rem 0;
+    line-height: 1.5;
+}
+
+/* === RESPONSIVIDADE PARA NOVOS ELEMENTOS === */
+@media (max-width: 768px) {
+    .intro-highlights {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .highlight-item {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .conquista-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .certificado-box {
+        padding: 1rem;
+    }
+    
+    .template-box {
+        padding: 0.5rem;
+    }
+    
+    .exemplo-real,
+    .pratica-container,
+    .warning-box,
+    .legal-info,
+    .best-practice-box {
+        margin: 0.5rem 0;
+        padding: 0.8rem;
+    }
+    
+    /* Títulos menores no mobile */
+    h1 {
+        font-size: 1.8em !important;
+    }
+    
+    h2 {
+        font-size: 1.5em !important;
+    }
+    
+    h3 {
+        font-size: 1.3em !important;
+    }
+    
+    h4 {
+        font-size: 1.1em !important;
+    }
+    
+    /* Paragrafos menores no mobile */
+    p {
+        font-size: 1em !important;
+        text-indent: 1em; /* Recuo menor no mobile */
+    }
+    
+    .dilema-container {
+        max-width: 100%;
+        padding: 1rem;
+    }
+}
+
+/* Scroll para containers de dilemas */
+.dilema-container {
+    margin-bottom: 2rem;
+}
+
+/* === TIPOGRAFIA ESTILO ABNT E DESKTOP AMPLIADO === */
+
+/* Hierarquia de Títulos seguindo padrões ABNT */
+h1 {
+    font-size: 2.2em !important;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.8em !important;
+    font-weight: 600;
+    margin: 2rem 0 1.5rem 0;
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+h3 {
+    font-size: 1.4em !important;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem 0;
+    color: #f39c12;
+}
+
+h4 {
+    font-size: 1.2em !important;
+    font-weight: 600;
+    margin: 1rem 0 0.8rem 0;
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+h4:hover {
+    color: #3498db;
+}
+
+h5 {
+    font-size: 1.1em !important;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem 0;
+    color: #e74c3c;
+}
+
+/* Parágrafos com melhor legibilidade */
+p {
+    font-size: 1.05em !important;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+    text-align: left;
+}
+
+/* === FORMATAÇÃO ESPECIAL PARA CITAÇÕES E ASPAS === */
+
+/* Citações diretas em aspas devem ser em itálico */
+p:first-child strong {
+    font-style: italic !important;
+    color: #f1c40f;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background: rgba(241, 196, 15, 0.08);
+    border-radius: 6px;
+    border-left: 3px solid #f1c40f;
+    text-align: left;
+}
+
+/* Texto corrido com melhor formatação */
+.conteudo-topico p:not(:first-child) {
+    margin-bottom: 1rem;
+}
+
+/* Citações e frases destacadas */
+p:has(strong) {
+    font-style: italic;
+    border-left: 4px solid #f1c40f;
+    padding-left: 1rem;
+    margin-left: 0.5rem;
+    background: rgba(241, 196, 15, 0.05);
+}
+
+/* Listas com melhor formatação */
+ul, ol {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+li {
+    margin-bottom: 0.8rem;
+    color: #e0e0e0;
+}
+
+li strong {
+    color: #3498db;
+    font-weight: 600;
+}
+
+/* Layout mais amplo para desktop */
+@media (min-width: 1200px) {
+    .tela {
+        max-width: 1200px !important;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    
+    .conteudo-topico {
+        padding: 1.5rem;
+        font-size: 1.1em;
+    }
+    
+    .dilema-container {
+        margin-bottom: 2.5rem;
+        padding: 1.5rem;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(52, 152, 219, 0.1);
+    }
+    
+    .topico-item {
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 1600px) {
+    .tela {
+        max-width: 1400px !important;
+        padding: 2.5rem;
+    }
+    
+    h1 {
+        font-size: 2.5em !important;
+    }
+    
+    h2 {
+        font-size: 2em !important;
+    }
+    
+    .conteudo-topico {
+        font-size: 1.15em;
+        padding: 2rem;
+    }
 }

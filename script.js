@@ -27,6 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     block: 'start' 
                 });
                 
+                // Se chegou na tela final, mostra a data no certificado
+                if (idDaTelaParaMostrar === 'final') {
+                    mostrarDataAtual();
+                }
+                
                 // Desbloqueia o primeiro tópico da nova tela
                 desbloquearPrimeiroTopico(telaParaMostrar);
             }, 100);
@@ -100,6 +105,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (conteudo) {
                     conteudo.classList.toggle('visivel');
                     conteudo.classList.toggle('escondido');
+                    
+                    // Ajusta o scroll quando o tópico é aberto
+                    ajustarScrollTopico(topico);
                 }
             });
         }
@@ -249,6 +257,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         console.log('Reset completo realizado!');
+    }
+
+    // --- FUNÇÃO PARA AJUSTAR SCROLL QUANDO TÓPICO É ABERTO ---
+    function ajustarScrollTopico(topico) {
+        const conteudo = topico.querySelector('.conteudo-topico');
+        if (conteudo && conteudo.classList.contains('visivel')) {
+            // Pequeno delay para garantir que a animação termine
+            setTimeout(() => {
+                // Scroll suave para mostrar o tópico completo
+                topico.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'nearest',
+                    inline: 'nearest'
+                });
+                
+                // Se o conteúdo for muito alto, rola para o início do conteúdo
+                if (conteudo.scrollHeight > conteudo.clientHeight) {
+                    conteudo.scrollTop = 0;
+                }
+            }, 300);
+        }
     }
 
     // Executa reset inicial e desbloqueia apenas o primeiro tópico da Parte 1
