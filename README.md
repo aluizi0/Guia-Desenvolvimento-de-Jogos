@@ -1,6 +1,6 @@
 # EthiCode: Guia de Desenvolvimento Ético de Jogos
 
-![Logo do EthiCode](ethicode_2_-removebg-preview.png)
+<img src="ethicode_2_-removebg-preview.png" alt="Logo do EthiCode" width="150">
 
 ## Sobre o Projeto
 
@@ -14,10 +14,10 @@ Diferente de um texto corrido, o EthiCode apresenta dilemas comuns da indústria
 
 O projeto foi desenvolvido com uma série de funcionalidades para criar uma experiência de usuário engajante e didática:
 
-* **Navegação por Telas:** O guia é dividido em telas distintas e de tela cheia, começando com uma tela de início imersiva. Cada grande parte do conteúdo é apresentada isoladamente para manter o foco do usuário.
-* **Sistema de Desbloqueio Progressivo:** Dentro de cada dilema, os tópicos ("Armadilha", "Mundo Real", etc.) são apresentados como um acordeão interativo. O usuário precisa interagir com um tópico para desbloquear o próximo, que é visualmente representado por um ícone de "cadeado".
-* **Confirmação de Compreensão:** Para garantir o engajamento ativo, o usuário precisa marcar uma caixa de seleção ("Li e compreendi este tópico") para confirmar a leitura antes de poder avançar, habilitando o próximo tópico ou o botão para concluir a etapa.
-* **Design Responsivo:** O layout se adapta a diferentes tamanhos de tela, garantindo uma boa experiência tanto em desktops quanto em dispositivos móveis.
+* **Experiência Imersiva:** Uma jornada tela a tela, projetada para focar o usuário em um conceito de cada vez, desde a tela de início até a conclusão.
+* **Sistema de Desbloqueio Progressivo:** Cada dilema ético é apresentado em três estágios: 'Armadilha', 'Mundo Real' e 'Melhores Práticas'. É preciso interagir com um tópico para desbloquear o próximo, simulando uma progressão de aprendizado.
+* **Confirmação de Leitura:** Para avançar, o usuário deve confirmar que leu e compreendeu cada tópico através de uma caixa de seleção, garantindo um engajamento ativo com o conteúdo.
+* **Design Responsivo:** O layout foi projetado para se adaptar a diferentes tamanhos de tela, de desktops a dispositivos móveis.
 
 ### 📚 Conteúdo Abordado
 
