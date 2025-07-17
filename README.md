@@ -10,7 +10,7 @@
 
 Diferente de um texto corrido, o EthiCode apresenta dilemas comuns da indústria através de uma estrutura focada na ação: **Armadilha**, **Mundo Real** e **Melhores Práticas**.
 
-### ✨ Funcionalidades
+### Funcionalidades
 
 O projeto foi desenvolvido com uma série de funcionalidades para criar uma experiência de usuário engajante e didática:
 
@@ -19,7 +19,7 @@ O projeto foi desenvolvido com uma série de funcionalidades para criar uma expe
 * **Confirmação de Leitura:** Para avançar, o usuário deve confirmar que leu e compreendeu cada tópico através de uma caixa de seleção, garantindo um engajamento ativo com o conteúdo.
 * **Design Responsivo:** O layout foi projetado para se adaptar a diferentes tamanhos de tela, de desktops a dispositivos móveis.
 
-### 📚 Conteúdo Abordado
+### Conteúdo Abordado
 
 O guia está dividido em três partes principais:
 
@@ -27,20 +27,20 @@ O guia está dividido em três partes principais:
 2.  **A Engenharia da Responsabilidade:** Trata da proteção de dados (LGPD), ética em monetização e a proteção de crianças.
 3.  **A Arena Digital Responsável:** Analisa a responsabilidade dos desenvolvedores no combate à toxicidade e na promoção de inclusão e diversidade.
 
-### 🛠️ Tecnologias Utilizadas
+### Tecnologias Utilizadas
 
 * HTML5
 * CSS3 (com Flexbox para layout)
 * JavaScript (Vanilla, sem frameworks)
 
-### 🚀 Como Executar o Projeto
+### Como Executar o Projeto
 
 Como este é um projeto web básico, não há necessidade de instalação. Basta seguir os passos:
 
 1.  Clone ou baixe este repositório.
 2.  Abra o arquivo `index.html` em qualquer navegador moderno.
 
-### 👥 Autores
+### Autores
 
 Este trabalho foi desenvolvido por:
 
